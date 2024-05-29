@@ -9,9 +9,11 @@ def load_document(file):
     name, extension = os.path.splitext(file)
 
     if extension == '.pdf':
-        from langchain.document_loaders import PyPDFLoader
+        #from langchain.document_loaders import PyPDFLoader
+        from langchain_community.document_loaders import PyMuPDFLoader
         print(f'Loading {file}')
-        loader = PyPDFLoader(file)
+        #loader = PyPDFLoader(file)
+        loader = PyMuPDFLoader(file)
     elif extension == '.docx':
         from langchain.document_loaders import Docx2txtLoader
         print(f'Loading {file}')
